@@ -21,7 +21,7 @@ const Footer = () => {
             <h4 className="font-display text-sm uppercase tracking-wider mb-4">Quick Links</h4>
             <nav className="flex flex-col gap-2 text-sm text-background/60">
               <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-              <Link to="/about" className="hover:text-primary transition-colors">About Us</Link>
+              
               <Link to="/products" className="hover:text-primary transition-colors">Products</Link>
               <Link to="/contact" className="hover:text-primary transition-colors">Contact Us</Link>
             </nav>

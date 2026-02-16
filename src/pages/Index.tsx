@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Truck, Award, Wrench, ChevronRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Shield, Truck, Award, Wrench, ShoppingCart, Star } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroImage from "@/assets/hero-cricket.jpg";
 import productLed from "@/assets/product-led.jpg";
@@ -9,10 +12,10 @@ import productManual from "@/assets/product-manual.jpg";
 import productCustom from "@/assets/product-custom.jpg";
 
 const products = [
-  { title: "LED Scoreboards", description: "High brightness & visibility. Ideal for stadiums & academies.", image: productLed, slug: "led" },
-  { title: "Portable Scoreboards", description: "Easy to move & install. Suitable for local grounds & tournaments.", image: productPortable, slug: "portable" },
-  { title: "Manual Scoreboards", description: "Cost-effective & durable. Traditional operation.", image: productManual, slug: "manual" },
-  { title: "Custom Scoreboards", description: "Tailor-made designs. Size, display, and features as per requirement.", image: productCustom, slug: "custom" },
+  { id: 101, title: "LED Scoreboards", description: "High brightness & visibility. Ideal for stadiums & academies.", image: productLed, slug: "led", price: 95000, badge: "Best Seller" },
+  { id: 102, title: "Portable Scoreboards", description: "Easy to move & install. Suitable for local grounds & tournaments.", image: productPortable, slug: "portable", price: 42000, badge: "Popular" },
+  { id: 103, title: "Manual Scoreboards", description: "Cost-effective & durable. Traditional operation.", image: productManual, slug: "manual", price: 15000, badge: "Value Pick" },
+  { id: 104, title: "Custom Scoreboards", description: "Tailor-made designs. Size, display, and features as per requirement.", image: productCustom, slug: "custom", price: 150000, badge: "Premium" },
 ];
 
 const stats = [
@@ -29,7 +32,11 @@ const whyChoose = [
   { icon: Wrench, title: "Custom Solutions", description: "Every ground is unique. We build scoreboards to match your needs." },
 ];
 
+const formatPrice = (price: number) =>
+  new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(price);
+
 const Index = () => {
+  const { addItem } = useCart();
   return (
     <>
       {/* Hero */}
@@ -90,16 +97,31 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product, i) => (
               <ScrollReveal key={product.slug} delay={i * 0.1}>
-                <Link to={`/products/${product.slug}`} className="group bg-card border rounded-lg overflow-hidden hover:shadow-lg transition-shadow block h-full">
-                  <div className="aspect-[4/3] overflow-hidden">
+                <Card className="group overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
+                  <div className="relative aspect-[4/3] overflow-hidden">
                     <img src={product.image} alt={product.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    {product.badge && (
+                      <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">{product.badge}</Badge>
+                    )}
                   </div>
-                  <div className="p-5">
-                    <h3 className="font-display text-lg font-semibold group-hover:text-primary transition-colors">{product.title}</h3>
+                  <CardContent className="p-5 flex flex-col flex-1">
+                    <h3 className="font-display text-lg font-semibold">{product.title}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{product.description}</p>
-                    <span className="mt-3 inline-flex items-center text-sm font-medium text-primary">Learn more <ChevronRight className="ml-1 w-4 h-4" /></span>
-                  </div>
-                </Link>
+                    <p className="mt-3 text-xl font-bold">Starting {formatPrice(product.price)}</p>
+                    <div className="flex gap-2 mt-4 pt-2">
+                      <Button size="sm" variant="outline" className="flex-1" asChild>
+                        <Link to={`/products/${product.slug}`}>View Details</Link>
+                      </Button>
+                      <Button
+                        size="sm"
+                        className="flex-1"
+                        onClick={() => addItem({ id: product.id, name: product.title, slug: product.slug, price: product.price, image: product.image })}
+                      >
+                        <ShoppingCart className="w-4 h-4 mr-1" /> Order Now
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
               </ScrollReveal>
             ))}
           </div>

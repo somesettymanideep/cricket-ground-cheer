@@ -7,7 +7,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import CartSidebar from "@/components/CartSidebar";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
-import About from "./pages/About";
+
 import Products from "./pages/Products";
 import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
@@ -29,7 +29,7 @@ const App = () => (
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
+              
               <Route path="/products" element={<Products />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/products/:slug" element={<ProductDetail />} />
