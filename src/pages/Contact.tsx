@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/ScrollReveal";
+import PageBanner from "@/components/PageBanner";
+import bannerContact from "@/assets/banner-contact.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -18,16 +20,11 @@ const Contact = () => {
 
   return (
     <>
-      <section className="bg-primary py-16 md:py-24">
-        <div className="container text-center">
-          <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground tracking-tight">Contact Us</h1>
-            <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-              Get in touch for a free consultation and custom quote.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <PageBanner
+        title="Contact Us"
+        subtitle="Get in touch for a free consultation and custom quote."
+        image={bannerContact}
+      />
 
       <section className="py-16 md:py-24">
         <div className="container grid md:grid-cols-2 gap-12 max-w-5xl">

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import PageBanner from "@/components/PageBanner";
+import bannerProducts from "@/assets/banner-products.jpg";
 import productLed from "@/assets/product-led.jpg";
 import productPortable from "@/assets/product-portable.jpg";
 import productManual from "@/assets/product-manual.jpg";
@@ -17,16 +19,11 @@ const products = [
 const Products = () => {
   return (
     <>
-      <section className="bg-primary py-16 md:py-24">
-        <div className="container text-center">
-          <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground tracking-tight">Our Products</h1>
-            <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-              Professional cricket scoreboard solutions for every ground, every budget.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <PageBanner
+        title="Our Products"
+        subtitle="Professional cricket scoreboard solutions for every ground, every budget."
+        image={bannerProducts}
+      />
 
       <section className="py-16 md:py-24">
         <div className="container space-y-16">

@@ -10,6 +10,8 @@ import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
 import { ShoppingCart, Search, SlidersHorizontal, X, Star, IndianRupee } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import PageBanner from "@/components/PageBanner";
+import bannerShop from "@/assets/banner-shop.jpg";
 import productLed from "@/assets/product-led.jpg";
 import productPortable from "@/assets/product-portable.jpg";
 import productManual from "@/assets/product-manual.jpg";
@@ -149,17 +151,11 @@ const Shop = () => {
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-primary py-12 md:py-20">
-        <div className="container text-center">
-          <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground tracking-tight">Shop Scoreboards</h1>
-            <p className="mt-3 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-              Browse our complete range of professional cricket scoreboards.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <PageBanner
+        title="Shop Scoreboards"
+        subtitle="Browse our complete range of professional cricket scoreboards."
+        image={bannerShop}
+      />
 
       <section className="py-8 md:py-12">
         <div className="container">
