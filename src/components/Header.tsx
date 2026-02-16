@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/contexts/CartContext";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -14,6 +16,7 @@ const navLinks = [
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const { totalItems, setIsOpen } = useCart();
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b">
@@ -39,6 +42,18 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
+          <button
+            onClick={() => setIsOpen(true)}
+            className="relative text-foreground/70 hover:text-primary transition-colors"
+            aria-label="Open cart"
+          >
+            <ShoppingCart className="w-5 h-5" />
+            {totalItems > 0 && (
+              <Badge className="absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center text-xs bg-primary text-primary-foreground">
+                {totalItems}
+              </Badge>
+            )}
+          </button>
           <Button asChild>
             <Link to="/contact">
               <Phone className="w-4 h-4 mr-2" />
@@ -48,13 +63,27 @@ const Header = () => {
         </nav>
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="relative text-foreground/70 hover:text-primary transition-colors"
+            aria-label="Open cart"
+          >
+            <ShoppingCart className="w-5 h-5" />
+            {totalItems > 0 && (
+              <Badge className="absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center text-xs bg-primary text-primary-foreground">
+                {totalItems}
+              </Badge>
+            )}
+          </button>
+          <button
+            className="text-foreground"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
