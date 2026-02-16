@@ -273,16 +273,16 @@ const Shop = () => {
                           </div>
 
                           <div className="flex gap-2 mt-4">
-                            <Button size="sm" className="flex-1" asChild>
+                            <Button size="sm" variant="outline" className="flex-1" asChild>
                               <Link to={`/products/${product.slug}`}>View Details</Link>
                             </Button>
                             <Button
                               size="sm"
-                              variant="outline"
+                              className="flex-1"
                               disabled={!product.inStock}
                               onClick={() => addItem({ id: product.id, name: product.name, slug: product.slug, price: product.price, image: product.image })}
                             >
-                              <ShoppingCart className="w-4 h-4" />
+                              <ShoppingCart className="w-4 h-4" /> Add
                             </Button>
                           </div>
                         </CardContent>
