@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "@/contexts/CartContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -49,6 +50,7 @@ const formatPrice = (price: number) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(price);
 
 const Shop = () => {
+  const { addItem } = useCart();
   const [search, setSearch] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<number[]>([0, 400000]);
@@ -278,7 +280,12 @@ const Shop = () => {
                             <Button size="sm" className="flex-1" asChild>
                               <Link to={`/products/${product.slug}`}>View Details</Link>
                             </Button>
-                            <Button size="sm" variant="outline" disabled={!product.inStock}>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              disabled={!product.inStock}
+                              onClick={() => addItem({ id: product.id, name: product.name, slug: product.slug, price: product.price, image: product.image })}
+                            >
                               <ShoppingCart className="w-4 h-4" />
                             </Button>
                           </div>
