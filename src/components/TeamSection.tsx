@@ -43,7 +43,7 @@ const TeamSection = () => {
         </ScrollReveal>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0" style={{ border: "1px solid rgba(186, 24, 22, 0.15)" }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0" style={{ border: "1px solid rgba(186, 24, 22, 0.15)" }}>
           {teamMembers.map((member, i) => {
             const num = String(i + 1).padStart(2, "0");
             const isFeatured = member.featured;
