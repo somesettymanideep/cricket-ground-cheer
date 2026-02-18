@@ -1,6 +1,5 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "@/contexts/CartContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -8,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
-import { ShoppingCart, Search, SlidersHorizontal, X, Star, IndianRupee } from "lucide-react";
+import { Search, SlidersHorizontal, X, Star } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageBanner from "@/components/PageBanner";
 import bannerShop from "@/assets/banner-shop.jpg";
@@ -52,7 +51,6 @@ const formatPrice = (price: number) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(price);
 
 const Shop = () => {
-  const { addItem } = useCart();
   const [search, setSearch] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<number[]>([0, 400000]);
@@ -96,7 +94,6 @@ const Shop = () => {
 
   const FilterSidebar = () => (
     <div className="space-y-6">
-      {/* Categories */}
       <div>
         <h3 className="font-display text-sm font-semibold uppercase tracking-wider mb-3">Categories</h3>
         <div className="space-y-2">
@@ -115,7 +112,6 @@ const Shop = () => {
         </div>
       </div>
 
-      {/* Price Range */}
       <div>
         <h3 className="font-display text-sm font-semibold uppercase tracking-wider mb-3">Price Range</h3>
         <Slider
@@ -132,7 +128,6 @@ const Shop = () => {
         </div>
       </div>
 
-      {/* Availability */}
       <div>
         <h3 className="font-display text-sm font-semibold uppercase tracking-wider mb-3">Availability</h3>
         <label className="flex items-center gap-2 cursor-pointer text-sm">
@@ -159,7 +154,6 @@ const Shop = () => {
 
       <section className="py-8 md:py-12">
         <div className="container">
-          {/* Top Bar */}
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between mb-8">
             <div className="relative w-full sm:w-80">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -203,7 +197,6 @@ const Shop = () => {
             </div>
           </div>
 
-          {/* Mobile Filters */}
           {mobileFiltersOpen && (
             <div className="md:hidden mb-8 p-4 rounded-lg border bg-card">
               <FilterSidebar />
@@ -211,14 +204,12 @@ const Shop = () => {
           )}
 
           <div className="flex gap-8">
-            {/* Desktop Sidebar */}
             <aside className="hidden md:block w-64 shrink-0">
               <div className="sticky top-24">
                 <FilterSidebar />
               </div>
             </aside>
 
-            {/* Product Grid */}
             <div className="flex-1">
               {filtered.length === 0 ? (
                 <div className="text-center py-16">
@@ -276,13 +267,8 @@ const Shop = () => {
                             <Button size="sm" variant="outline" className="flex-1" asChild>
                               <Link to={`/products/${product.slug}`}>View Details</Link>
                             </Button>
-                            <Button
-                              size="sm"
-                              className="flex-1"
-                              disabled={!product.inStock}
-                              onClick={() => addItem({ id: product.id, name: product.name, slug: product.slug, price: product.price, image: product.image })}
-                            >
-                              <ShoppingCart className="w-4 h-4" /> Add
+                            <Button size="sm" className="flex-1" asChild>
+                              <Link to="/contact">Get a Quote</Link>
                             </Button>
                           </div>
                         </CardContent>
