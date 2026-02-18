@@ -52,12 +52,12 @@ const TeamSection = () => {
             return (
               <ScrollReveal key={member.name} delay={i * 0.08}>
                 <motion.div
-                  className={`relative overflow-hidden p-6 flex flex-col justify-between group cursor-default ${isFeatured ? "sm:row-span-2" : ""}`}
+                  className={`relative overflow-hidden p-6 flex flex-col justify-between group cursor-default h-full`}
                   style={{
                     backgroundColor: isFeatured ? "#ba1816" : "#ffffff",
                     borderRight: "1px solid rgba(186, 24, 22, 0.15)",
                     borderBottom: "1px solid rgba(186, 24, 22, 0.15)",
-                    minHeight: isFeatured ? "420px" : "260px",
+                    minHeight: "320px",
                   }}
                   whileHover={{ y: -3, boxShadow: "0 8px 30px rgba(186, 24, 22, 0.12)" }}
                   transition={{ duration: 0.25 }}
