@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, ShoppingCart } from "lucide-react";
-import { useCart } from "@/contexts/CartContext";
+import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import TeamSection from "@/components/TeamSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
@@ -33,7 +32,6 @@ const formatPrice = (price: number) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(price);
 
 const Index = () => {
-  const { addItem } = useCart();
   return (
     <>
       {/* Hero */}
@@ -109,12 +107,8 @@ const Index = () => {
                       <Button size="sm" variant="outline" className="flex-1" asChild>
                         <Link to={`/products/${product.slug}`}>View Details</Link>
                       </Button>
-                      <Button
-                        size="sm"
-                        className="flex-1"
-                        onClick={() => addItem({ id: product.id, name: product.title, slug: product.slug, price: product.price, image: product.image })}
-                      >
-                        <ShoppingCart className="w-4 h-4 mr-1" /> Order Now
+                      <Button size="sm" className="flex-1" asChild>
+                        <Link to="/contact">Get a Quote</Link>
                       </Button>
                     </div>
                   </CardContent>
