@@ -2,13 +2,9 @@ import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 
 const teamMembers = [
-  { name: "Rajesh Gupta", role: "Founder & CEO", bio: "Visionary leader who started Ballebaaz from a small Meerut workshop with a mission to modernize cricket scoring.", specialty: "Business Strategy", featured: true },
-  { name: "Amit Sharma", role: "Head of Engineering", bio: "Designs robust LED and FPGA-based display systems built for extreme outdoor conditions.", specialty: "LED & FPGA Systems" },
-  { name: "Priya Verma", role: "Operations Manager", bio: "Streamlines manufacturing and ensures every scoreboard ships on time, every time.", specialty: "Supply Chain" },
-  { name: "Vikram Singh", role: "Installation Lead", bio: "Has installed scoreboards at over 200 grounds across 18 states in India.", specialty: "Field Operations" },
-  { name: "Neha Patel", role: "Product Designer", bio: "Creates intuitive interfaces for wireless scoreboard controls and mobile apps.", specialty: "UX & Interface" },
-  { name: "Suresh Kumar", role: "Quality Assurance", bio: "Ensures every unit passes rigorous weather, impact, and visibility testing.", specialty: "Testing & QA" },
-  { name: "Kavita Reddy", role: "Customer Success", bio: "Bridges client needs with engineering capabilities for tailored solutions.", specialty: "Client Relations" },
+  { name: "Aditya VNS", role: "CEO", bio: "An innovator, who has always been passionate about technology, is the creator of Ballebaaz, disrupting the game of Cricket for entertainers.", specialty: "Innovation & Vision", featured: true },
+  { name: "Vinod Goud", role: "Operations Manager", bio: "Vinod represented India for boxing at 17 years of age and is known for his discipline, consistency and determination. A strategist who just knows how to plan well.", specialty: "Strategy & Operations" },
+  { name: "Pranay Kumar", role: "Electronics Engineer", bio: "Graduating with a degree in Electronics and Communication, he has always loved working with wires.", specialty: "Electronics & Hardware" },
 ];
 
 const TeamSection = () => {
