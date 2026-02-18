@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Shield, Truck, Award, Wrench, ShoppingCart, Star } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import ScrollReveal from "@/components/ScrollReveal";
+import TeamSection from "@/components/TeamSection";
+import FAQSection from "@/components/FAQSection";
 import heroImage from "@/assets/hero-cricket.jpg";
 import productLed from "@/assets/product-led.jpg";
 import productPortable from "@/assets/product-portable.jpg";
@@ -152,6 +154,12 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Team */}
+      <TeamSection />
+
+      {/* FAQ */}
+      <FAQSection />
 
       {/* CTA */}
       <section className="py-16 md:py-24">
