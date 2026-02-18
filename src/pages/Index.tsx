@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Shield, Truck, Award, Wrench, ShoppingCart, Star } from "lucide-react";
+import { ArrowRight, ShoppingCart } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import ScrollReveal from "@/components/ScrollReveal";
 import TeamSection from "@/components/TeamSection";
+import WhyChooseSection from "@/components/WhyChooseSection";
 import FAQSection from "@/components/FAQSection";
 import heroImage from "@/assets/hero-cricket.jpg";
 import productLed from "@/assets/product-led.jpg";
@@ -27,12 +28,6 @@ const stats = [
   { value: "28", label: "States Covered" },
 ];
 
-const whyChoose = [
-  { icon: Shield, title: "Built to Last", description: "Weather-resistant and durable construction for Indian conditions." },
-  { icon: Truck, title: "Pan-India Delivery", description: "We deliver and install scoreboards across all Indian states." },
-  { icon: Award, title: "Certified Quality", description: "Manufactured to the highest standards in our Meerut facility." },
-  { icon: Wrench, title: "Custom Solutions", description: "Every ground is unique. We build scoreboards to match your needs." },
-];
 
 const formatPrice = (price: number) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(price);
@@ -131,29 +126,7 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container">
-          <ScrollReveal>
-            <div className="text-center max-w-xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Why Choose Ballebaaz?</h2>
-              <p className="mt-3 text-muted-foreground">Trusted by cricket grounds, academies, and stadiums across India.</p>
-            </div>
-          </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChoose.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div className="bg-card p-6 rounded-lg border text-center h-full">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-display text-lg font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyChooseSection />
 
       {/* Team */}
       <TeamSection />
