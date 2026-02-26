@@ -10,24 +10,44 @@ const Privacy = () => {
 
         <div className="mt-8 space-y-8 text-sm text-muted-foreground leading-relaxed">
           <section>
-            <h2 className="text-lg font-display font-semibold text-foreground">Information Collection</h2>
-            <p className="mt-2">We collect personal information such as name, email address, phone number, and scoreboard requirements when you submit a contact or quote request form on our website.</p>
+            <h2 className="text-lg font-display font-semibold text-foreground">1. Information Collection</h2>
+            <p className="mt-2">We collect personal information, such as name, email address, and contact details, solely for the purpose of fulfilling orders and providing customer support.</p>
           </section>
           <section>
-            <h2 className="text-lg font-display font-semibold text-foreground">Data Usage</h2>
-            <p className="mt-2">Your information is used solely to respond to your enquiries, provide quotes, and communicate about our products and services. We do not sell or share your data with third parties for marketing purposes.</p>
+            <h2 className="text-lg font-display font-semibold text-foreground">2. Data Usage</h2>
+            <p className="mt-2">Personal information collected is used for order processing, delivery, and communication with customers regarding their orders.</p>
           </section>
           <section>
-            <h2 className="text-lg font-display font-semibold text-foreground">Cookies Policy</h2>
-            <p className="mt-2">Our website may use cookies to enhance your browsing experience and analyze site traffic. You can disable cookies through your browser settings at any time.</p>
+            <h2 className="text-lg font-display font-semibold text-foreground">3. Data Protection</h2>
+            <p className="mt-2">We are committed to protecting the privacy and security of our customers' personal information and implement appropriate measures to safeguard it.</p>
           </section>
           <section>
-            <h2 className="text-lg font-display font-semibold text-foreground">Data Protection & Security</h2>
-            <p className="mt-2">We take reasonable measures to protect your personal information from unauthorized access, alteration, or disclosure. However, no internet transmission is 100% secure.</p>
+            <h2 className="text-lg font-display font-semibold text-foreground">4. Third-Party Disclosure</h2>
+            <p className="mt-2">We do not sell, trade, or otherwise transfer personal information to third parties without explicit consent, except for the purpose of order fulfillment and delivery.</p>
           </section>
           <section>
-            <h2 className="text-lg font-display font-semibold text-foreground">Contact for Privacy Concerns</h2>
-            <p className="mt-2">If you have any questions about this privacy policy, please contact us at info@ballebaaz.com or call +91 98765 43210.</p>
+            <h2 className="text-lg font-display font-semibold text-foreground">5. Data Retention</h2>
+            <p className="mt-2">Personal information is retained only for as long as necessary to fulfill orders and provide customer support, unless otherwise required by law.</p>
+          </section>
+          <section>
+            <h2 className="text-lg font-display font-semibold text-foreground">6. Cookies</h2>
+            <p className="mt-2">Our website may use cookies to enhance user experience and track website usage. Users may choose to disable cookies in their browser settings, although this may affect certain functionalities of the website.</p>
+          </section>
+          <section>
+            <h2 className="text-lg font-display font-semibold text-foreground">7. Third-Party Services</h2>
+            <p className="mt-2">We may use third-party services, such as payment processors and shipping carriers, to facilitate order processing and delivery. These third-party services may have their own privacy policies governing the use of personal information.</p>
+          </section>
+          <section>
+            <h2 className="text-lg font-display font-semibold text-foreground">8. Data Security</h2>
+            <p className="mt-2">We take reasonable precautions to protect the confidentiality and integrity of personal information collected through our website. However, we cannot guarantee that data transmission over the internet or storage systems will be completely secure.</p>
+          </section>
+          <section>
+            <h2 className="text-lg font-display font-semibold text-foreground">9. Children's Privacy</h2>
+            <p className="mt-2">Our website is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under the age of 13 without parental consent.</p>
+          </section>
+          <section>
+            <h2 className="text-lg font-display font-semibold text-foreground">10. Changes to Privacy Policy</h2>
+            <p className="mt-2">We reserve the right to update our Privacy Policy as needed to reflect changes in our practices or legal requirements. Users will be notified of any significant changes.</p>
           </section>
         </div>
       </div>

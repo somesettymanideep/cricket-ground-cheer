@@ -62,7 +62,8 @@ const Footer = () => {
           <span>© {new Date().getFullYear()} Ballebaaz – All Rights Reserved</span>
           <div className="flex gap-4">
             <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
+            <Link to="/shipping" className="hover:text-primary transition-colors">Shipping Policy</Link>
           </div>
         </div>
       </div>
