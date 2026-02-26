@@ -4,11 +4,14 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Quote } from "lucide-react";
+import founderAditya from "@/assets/founder-aditya.jpg";
+import founderPranay from "@/assets/founder-pranay.jpg";
+import founderSharath from "@/assets/founder-sharath.jpg";
 
 const founders = [
-  { name: "Aditya", role: "Co-Founder & CEO", initials: "A" },
-  { name: "Pranay", role: "Co-Founder & CTO", initials: "P" },
-  { name: "Sharath", role: "Co-Founder & COO", initials: "S" },
+  { name: "Aditya", role: "Co-Founder & CEO", photo: founderAditya },
+  { name: "Pranay", role: "Co-Founder & CTO", photo: founderPranay },
+  { name: "Sharath", role: "Co-Founder & COO", photo: founderSharath },
 ];
 
 const About = () => {
@@ -37,10 +40,8 @@ const About = () => {
                 <div className="grid grid-cols-3 gap-4">
                   {founders.map((f) => (
                     <div key={f.name} className="flex flex-col items-center text-center">
-                      <div className="w-28 h-28 md:w-36 md:h-36 rounded-sm bg-accent border-2 border-primary/20 flex items-center justify-center overflow-hidden shadow-lg">
-                        <span className="text-4xl md:text-5xl font-display font-bold text-primary/60">
-                          {f.initials}
-                        </span>
+                      <div className="w-28 h-28 md:w-36 md:h-36 rounded-sm bg-accent border-2 border-primary/20 overflow-hidden shadow-lg">
+                        <img src={f.photo} alt={f.name} className="w-full h-full object-cover" />
                       </div>
                       <h3 className="mt-3 font-display font-bold text-foreground text-sm md:text-base">
                         {f.name}
