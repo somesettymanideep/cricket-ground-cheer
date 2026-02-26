@@ -64,6 +64,7 @@ const Footer = () => {
             <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
             <Link to="/shipping" className="hover:text-primary transition-colors">Shipping Policy</Link>
+            <Link to="/warranty" className="hover:text-primary transition-colors">Warranty</Link>
           </div>
         </div>
       </div>

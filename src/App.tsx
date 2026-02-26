@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Shipping from "./pages/Shipping";
+import Warranty from "./pages/Warranty";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/shipping" element={<Shipping />} />
+              <Route path="/warranty" element={<Warranty />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
