@@ -15,6 +15,7 @@ import Terms from "./pages/Terms";
 import Shipping from "./pages/Shipping";
 import Warranty from "./pages/Warranty";
 import About from "./pages/About";
+import USPs from "./pages/USPs";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/shipping" element={<Shipping />} />
               <Route path="/warranty" element={<Warranty />} />
               <Route path="/about" element={<About />} />
+              <Route path="/why-choose-us" element={<USPs />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
