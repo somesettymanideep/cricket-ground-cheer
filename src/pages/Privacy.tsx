@@ -1,10 +1,10 @@
 import PageBanner from "@/components/PageBanner";
-import bannerLegal from "@/assets/banner-legal.jpg";
+import bannerPrivacy from "@/assets/banner-privacy.jpg";
 
 const Privacy = () => {
   return (
     <>
-      <PageBanner title="Privacy Policy" image={bannerLegal} />
+      <PageBanner title="Privacy Policy" image={bannerPrivacy} />
       <div className="container py-16 md:py-24 max-w-3xl">
         <p className="text-muted-foreground text-sm">Last updated: February 2026</p>
 

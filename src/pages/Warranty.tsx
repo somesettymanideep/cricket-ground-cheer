@@ -1,10 +1,10 @@
 import PageBanner from "@/components/PageBanner";
-import bannerLegal from "@/assets/banner-legal.jpg";
+import bannerWarranty from "@/assets/banner-warranty.jpg";
 
 const Warranty = () => {
   return (
     <>
-      <PageBanner title="Warranty Terms & Conditions" image={bannerLegal} />
+      <PageBanner title="Warranty Terms & Conditions" image={bannerWarranty} />
       <div className="container py-16 md:py-24 max-w-3xl">
         <p className="text-muted-foreground text-sm">Last updated: February 2026</p>
 
