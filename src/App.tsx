@@ -16,6 +16,7 @@ import Shipping from "./pages/Shipping";
 import Warranty from "./pages/Warranty";
 import About from "./pages/About";
 import USPs from "./pages/USPs";
+import LEDVariations from "./pages/LEDVariations";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
               <Route path="/warranty" element={<Warranty />} />
               <Route path="/about" element={<About />} />
               <Route path="/why-choose-us" element={<USPs />} />
+              <Route path="/led-variations" element={<LEDVariations />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
